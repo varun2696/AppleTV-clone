@@ -6,7 +6,6 @@ body {
 body>h5{
     margin-left: 50px;
     margin-top: 20px;
-    /* font-size: ; */
 }
 
 #navbar {
@@ -16,6 +15,8 @@ body>h5{
     display: flex;
     justify-content: space-between;
     background: #000;
+    position: sticky;
+    top: 0px;
 }
 
 #navbar>div {
@@ -36,7 +37,8 @@ body>h5{
     font-size: 16px;
     border-radius: 5px;
     height: 28px;
-
+    border: 1px solid lightcyan;
+    background: #000;
 }
 
 #sign {
@@ -54,6 +56,9 @@ body>h5{
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    position: relative;
+    top: 0;
+    z-index: -1;
 }
 
 #bgimg>div:nth-child(1) {
@@ -68,9 +73,8 @@ body>h5{
     width: 250px;
     height: 40px;
     font-size: 18px;
-    padding-top: 7px;
+    padding:5px 0 5px 0;
     border-radius: 10px;
-    margin-bottom: -5px;
     font-weight: 500;
 }
 
