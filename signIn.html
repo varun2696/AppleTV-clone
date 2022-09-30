@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+
+    <style>
+        body {
+            background-color: blanchedalmond;
+        }
+
+        form {
+            width: 40%;
+            margin: auto;
+            border: 0px solid;
+            text-align: center;
+            margin-top: 100px;
+            padding-top: 50px;
+            background: rgb(83, 142, 127);
+            border-radius: 20px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        }
+
+        #create {
+            margin-top: 100px;
+            padding-bottom: 50px;
+            color: #7b0469;
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #create:hover {
+            /* text-decoration: underline; */
+            cursor: pointer;
+        }
+
+        form>h2 {
+            margin-top: 30px;
+            margin-bottom: 25px;
+            font-size: 30px;
+        }
+
+        form>h2+p {
+            font-size: 20px;
+        }
+
+        input {
+            display: block;
+            margin: auto;
+            font-size: 25px;
+            padding: 2%;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+
+        #login:hover {
+            cursor: pointer;
+            background: rgb(95, 64, 64);
+            color: bisque;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <img src="https://img.icons8.com/office/2x/mac-os.png" alt="">
+        <h2>Sign in with your Apple ID</h2>
+        <p>You will be signed in to Apple TV and Apple Music</p>
+        <input type="text" placeholder="Apple ID" id="appleId"><br>
+        <!-- <button type="submit">Login</button> -->
+        <input type="submit" value="Login" id="login">
+        <a href="createId.html">
+            <p id="create">Create New Apple ID ></p>
+        </a>
+
+    </form>
+</body>
+
+</html>
+
+<script>
+
+    var form = document.querySelector("form");
+    form.addEventListener("submit", Login);
+
+    var UserData = JSON.parse(localStorage.getItem("UserDetails"));
+
+    var userName = JSON.parse(localStorage.getItem("UserID")) || [];
+
+    function Login(e) {
+        e.preventDefault();
+
+        if (form.appleId.value == "") {
+            alert("Please enter your Apple ID");
+        }
+        else {
+            UserData.forEach(function (el) {
+                if (form.appleId.value == el.Email) {
+                    alert("Login Successful");
+
+                    userName.push(form.appleId.value);
+                    localStorage.setItem("UserID", JSON.stringify(userName));
+                }
+                else {
+                    alert("Wrong Password");
+                }
+            })
+        }
+
+    }
+</script>

@@ -1,4 +1,4 @@
-body>p{
+body>p {
     margin-left: 50px;
 }
 
@@ -146,7 +146,7 @@ h5 {
     color: gray;
 }
 
-body>div div{
+body>div div {
     position: relative;
     z-index: -1;
     top: 0px;
