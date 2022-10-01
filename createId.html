@@ -14,11 +14,10 @@
             margin: auto;
             padding: 30px;
             background: white;
-            text-align: center;
             margin-top: 50px;
             padding-top: 40px;
             padding-bottom: 30px;
-            background: rgb(162, 110, 57);
+            background: rgb(138, 118, 97);
             border-radius: 30px;
         }
 
@@ -32,16 +31,83 @@
             border-radius: 10px;
         }
 
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            margin: -10px 0 10px 50px;
+            font-size: 20px;
+            color: rgb(18, 17, 17);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
         #saveData {
-            background-color: cornflowerblue;
-            font-size: 25px;
-            color: wheat;
+            background-color: rgb(54, 74, 110);
+            font-size: 30px;
+            font-weight: 500;
+            color: rgb(212, 231, 212);
+            border-radius: 25px;
+            width: 80%;
         }
 
         #saveData:hover {
             cursor: pointer;
-            background: rgb(24, 192, 198);
-            color: rgb(133, 130, 126);
+            background: rgb(126, 138, 138);
+            color: rgb(49, 61, 59);
+        }
+
+
+        /* for medium screen */
+        @media all and (min-width:550px) and (max-width:700px) {
+            form {
+                width: 65%;
+                padding: 20px;
+            }
+
+            input {
+                width: 90%;
+                font-size: 18px;
+                padding: 10px;
+                border-radius: 8px;
+            }
+
+            p {
+                margin: -8px 0 8px 30px;
+                font-size: 18px;
+            }
+
+            #saveData {
+                font-size: 25px;
+                border-radius: 20px;
+                width: 85%;
+            }
+        }
+
+        /* for small screen */
+        @media all and (min-width:320px) and (max-width:550px) {
+            form {
+                width: 80%;
+                padding: 15px;
+            }
+
+            input {
+                width: 92%;
+                font-size: 16px;
+                padding: 8px;
+                border-radius: 6px;
+            }
+
+            p {
+                margin: -6px 0 6px 20px;
+                font-size: 16px;
+            }
+
+            #saveData {
+                font-size: 20px;
+                border-radius: 10px;
+                width: 90%;
+            }
         }
     </style>
 </head>
@@ -84,7 +150,8 @@
 
             UserData.push(obj);
             localStorage.setItem("UserDetails", JSON.stringify(UserData));
-            console.log(UserData)
+            // console.log(UserData)
+            alert("Apple ID created")
 
         }
     }
