@@ -34,20 +34,23 @@
         }
 
         #navbar>div:nth-child(2) {
+            width: auto;
             margin-right: 50px;
             padding: 8px;
         }
 
         #search {
+            width: auto;
             font-size: 18px;
             border-radius: 5px;
             height: 28px;
             border: 1px solid lightcyan;
             background: #000;
-            padding-left: 10px;
+            padding-left: 10PX;
         }
 
         #sign {
+            width: auto;
             font-size: 16px;
             border-radius: 5px;
             height: 30px;
@@ -91,7 +94,7 @@
 
 
             #search {
-                width: 100px;
+                width: auto;
                 font-size: 16px;
                 border-radius: 5px;
                 height: 22px;
@@ -99,6 +102,7 @@
             }
 
             #sign {
+                width: auto;
                 font-size: 16px;
                 border-radius: 5px;
                 height: 24px;
@@ -159,10 +163,12 @@
 
 <body>
     <div id="navbar">
-        <div><img src="https://deadline.com/wp-content/uploads/2021/03/apple-tv-plus-logo-on-blk.png" alt=""></div>
+        <div id="appleLogo">
+            <img src="https://deadline.com/wp-content/uploads/2021/03/apple-tv-plus-logo-on-blk.png" alt="">
+        </div>
         <div>
             <input id="search" type="text" placeholder="Search">
-            <a href="signIn.html"><button id="sign"> Sign In</button></a>
+            <button id="sign"></button>
         </div>
     </div>
 

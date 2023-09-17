@@ -26,12 +26,12 @@
 <body>
 
     <div id="navbar">
-        <div><img src="https://deadline.com/wp-content/uploads/2021/03/apple-tv-plus-logo-on-blk.png" alt=""></div>
+        <div id="appleLogo">
+            <img src="https://deadline.com/wp-content/uploads/2021/03/apple-tv-plus-logo-on-blk.png" alt="logo">
+        </div>
         <div>
-            <a href="movies.html"><input id="search" type="text" placeholder="Search"></a>
-
-            <a href="signIn.html"><button id="sign"> Sign In</button></a>
-
+            <input id="search" type="text" placeholder="Search">
+            <button id="sign"></button>
         </div>
     </div>
 
@@ -973,5 +973,36 @@
     </div>
 
 </body>
+
+<script>
+    const appleLogo = document.getElementById("appleLogo");
+    appleLogo.addEventListener('click', function () {
+        window.location.href = "index.html"
+    })
+
+    const showUserName = JSON.parse(sessionStorage.getItem("UserID")) || "Sign In";
+    const signInBtn = document.getElementById('sign');
+    signInBtn.innerText = showUserName;
+
+    signInBtn.addEventListener('click', function(){
+        if(signInBtn.innerText === "Sign In"){
+            window.location.replace('/signIn.html')
+        }
+        else{
+            return;
+        }
+    })
+
+    const search = document.getElementById('search');
+    search.addEventListener('click', function(){
+        if(signInBtn.innerText !== "Sign In"){
+            window.location.replace('/movies.html')
+        }
+        else{
+            alert("Please Login to Continue");
+            window.location.replace('/signIn.html')
+        }
+    })
+</script>
 
 </html>

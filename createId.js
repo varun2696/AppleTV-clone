@@ -3,9 +3,9 @@
 var form = document.querySelector("form");
 form.addEventListener("submit", StoreData);
 
-var UserData = JSON.parse(localStorage.getItem("UserDetails")) || [];
+var UserData = JSON.parse(sessionStorage.getItem("UserDetails")) || [];
 
-function StoreData() {
+function StoreData(event) {
     event.preventDefault();
 
     if (form.first.value == "" || form.last.value == "" || form.dob.value == "" || form.email.value == "" || form.password.value == "") {
@@ -21,9 +21,11 @@ function StoreData() {
         };
 
         UserData.push(obj);
-        localStorage.setItem("UserDetails", JSON.stringify(UserData));
+        sessionStorage.setItem("UserDetails", JSON.stringify(UserData));
         // console.log(UserData)
         alert("Apple ID created")
+        window.location.replace('./signIn.html')
+        // form.reset();
 
     }
 }

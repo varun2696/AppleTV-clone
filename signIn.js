@@ -1,31 +1,40 @@
 
 
 
-    var form = document.querySelector("form");
-    form.addEventListener("submit", Login);
+var form = document.querySelector("form");
+form.addEventListener("submit", Login);
 
-    var UserData = JSON.parse(localStorage.getItem("UserDetails"));
+var UserData = JSON.parse(sessionStorage.getItem("UserDetails"));
 
-    var userName = JSON.parse(localStorage.getItem("UserID")) || [];
+var userName = JSON.parse(sessionStorage.getItem("UserID")) || "";
 
-    function Login(e) {
-        e.preventDefault();
+function Login(e) {
+    e.preventDefault();
 
-        if (form.appleId.value == "") {
-            alert("Please enter your Apple ID");
+    const email = form.appleId.value;
+    const password = form.password.value;
+
+    if (email == "" || password == "") {
+        alert("Please enter your Apple ID and password");
+    }
+    else if (!UserData) {
+        alert("You are not registered Please register");
+        window.location.replace('/createId.html');
+    }
+    else {
+        const getUser = UserData.find(function (el) {
+            return el.Email === email && el.Password === password;
+
+        })
+        if (getUser) {
+            console.log(getUser)
+            alert("Login Successful");
+            sessionStorage.setItem("UserID", JSON.stringify(getUser.FirstName));
+            window.location.replace('/index.html');
         }
         else {
-            UserData.forEach(function (el) {
-                if (form.appleId.value == el.Email) {
-                    alert("Login Successful");
-
-                    userName.push(form.appleId.value);
-                    localStorage.setItem("UserID", JSON.stringify(userName));
-                }
-                else {
-                    alert("Wrong Password");
-                }
-            })
+            alert("Wrong Password");
         }
-
     }
+
+}
