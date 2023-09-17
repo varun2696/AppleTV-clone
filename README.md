@@ -1,17 +1,13 @@
 # Apple TV+ Clone 
 ---
 <p>
-This was a individual construct week project at Masai School.
-Goal behind the project was to create a clone of the Apple TV+ website as close as possible to the original one with all the major functionalities of this website, such as User Authentication, User Details Management, Series & Shows gallery and carousels and Show Details.
-This project was built by me in 5 Days. 
+This project was an individual assignment during my time at Masai School's Construct Week. The goal behind the project was to create a clone of the Apple TV+ website, replicating it as closely as possible to the original, complete with all the major functionalities. These functionalities included User Authentication, User Details Management, Series & Shows gallery, carousels, and Show Details. I completed this project in just 5 days.
 </p>
 
 * [Click Here](https://static-apple-tv-clone.netlify.app/ "Apple TV+ Project") to view the deployed website.
 
 <p>
-Apple TV+ is an American subscription streaming service owned and operated by Apple Inc. 
-It offers a selection of original production films and television series called Apple Originals.
-It's the portal for Apple's Apple TV+ service, featuring original content created for Apple.
+Apple TV+ is an American subscription-based streaming service owned and operated by Apple Inc. The platform offers a curated selection of original films and television series known as Apple Originals.
 </p>
 
 ### Credits
