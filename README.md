@@ -22,6 +22,7 @@ ___
 * HTML
 * CSS
 * JavaScript
+* Bootstrap
 
 ### Features
 ___
